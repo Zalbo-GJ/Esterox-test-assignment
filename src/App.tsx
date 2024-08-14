@@ -5,8 +5,14 @@ import { TreeNode } from './Tree/TreeNode';
 import { Node } from './Tree/types';
 
 function App() {
-  const { root, addSubordinate, addBranchContainer, addBranchMember, deleteNode, addBranchContainerAndDeleteNode } =
-    useOrganizationTree();
+  const {
+    root,
+    addSubordinate,
+    addBranchContainer,
+    addBranchMember,
+    deleteNode,
+    addBranchContainerAndDeleteNode,
+  } = useOrganizationTree();
 
   const handleAddSubordinate = useCallback((node: Node) => addSubordinate(node), [addSubordinate]);
   const handleAddBranchContainer = useCallback(
@@ -27,11 +33,10 @@ function App() {
   return (
     <div className="app">
       <h1>Organization Tree</h1>
-      <h4>+ : Add Branch Member</h4>
+      <h4>+ : Add Branch Member or a Peer to the current node</h4>
       <h4>... : Add Subordinate</h4>
-      <h4>X : Delete Only Node</h4>
-      <h4>X* : Delete with Children</h4>
-      <h4>BC : Add Branch Container and Delete Node</h4>
+      <h4>X : Delete Only That Node</h4>
+      <h4>X* : Delete Node along with its Children</h4>
       <div className="tree-outer-container">
         <div className="tree-container">
           <TreeNode
