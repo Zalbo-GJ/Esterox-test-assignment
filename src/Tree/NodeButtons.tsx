@@ -17,7 +17,7 @@ export const NodeButtonTop: React.FC<NodeButtonsProps> = ({
   onAddBranchMember,
   deleteWithChildren,
   deleteOnlyNode,
-  addBranchContainerAndDeleteNode
+  addBranchContainerAndDeleteNode,
 }) => {
   return (
     <div className="node-buttons-top">
@@ -27,15 +27,11 @@ export const NodeButtonTop: React.FC<NodeButtonsProps> = ({
       {node.type === 'BranchContainer' && (
         <button onClick={() => onAddBranchMember(node)}>+</button>
       )}
-      {node.type === 'Subordinate' && (
-        <button onClick={() => deleteOnlyNode(node)}>X</button>
-      )}
-      {node.type === 'BranchMember' && (
-        <button onClick={() => deleteOnlyNode(node)}>X</button>
-      )}
-      {node.type !== 'BranchMember' && node.type !== 'BranchContainer' && node.type !== 'Director' && (
-        <button onClick={() => deleteWithChildren(node)}>X*</button>
-      )}
+      {node.type === 'Subordinate' && <button onClick={() => deleteOnlyNode(node)}>X</button>}
+      {node.type === 'BranchMember' && <button onClick={() => deleteOnlyNode(node)}>X</button>}
+      {node.type !== 'BranchMember' &&
+        node.type !== 'BranchContainer' &&
+        node.type !== 'Director' && <button onClick={() => deleteWithChildren(node)}>X*</button>}
       {node.type === 'BranchContainer' && (
         <button onClick={() => deleteWithChildren(node)}>X</button>
       )}
@@ -46,16 +42,14 @@ export const NodeButtonTop: React.FC<NodeButtonsProps> = ({
 export const NodeButtonBottom: React.FC<NodeButtonsProps> = ({
   node,
   onAddSubordinate,
-  onAddBranchContainer
+  onAddBranchContainer,
 }) => {
   return (
     <div className="node-buttons-bottom">
-      {node.type !== 'BranchContainer' && node.type !== "BranchMember" && (
+      {node.type !== 'BranchContainer' && (
         <button onClick={() => onAddSubordinate(node)}>...</button>
       )}
-      {node.type === 'Director' && (
-        <button onClick={() => onAddBranchContainer(node)}>+</button>
-      )}
+      {node.type === 'Director' && <button onClick={() => onAddBranchContainer(node)}>+</button>}
     </div>
   );
 };

@@ -95,23 +95,23 @@ h4 {
   content: '';
   position: absolute;
   top: 0;
-  width: 50%; /* Set to 50% of the parent width */
+  width: 50%;
   height: 20px;
   border-top: 1px solid #ccc;
 }
 
 .children li::before {
-  right: 50%; /* Align the end of the left line with the center */
+  right: 50%; 
 }
 
 .children li::after {
-  left: 50%; /* Align the start of the right line with the center */
+  left: 50%;
   border-left: 1px solid #ccc;
 }
 
 .children li:first-child::before,
 .children li:last-child::after {
-  border: none; /* Remove unnecessary borders for the first and last children */
+  border: none; 
 }
 
 .children li:last-child::before {
