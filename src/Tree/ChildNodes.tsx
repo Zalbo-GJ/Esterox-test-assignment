@@ -21,25 +21,25 @@ export const ChildNodes: React.FC<ChildNodesProps> = ({
   deleteOnlyNode,
   addBranchContainerAndDeleteNode,
 }) => {
-  if (node.type === 'BranchContainer') {
-    return (
-      <ul className="children branch-members">
-        {node.children.map((child: Node) => (
-          <li key={child.id}>
-            <TreeNode
-              node={child}
-              onAddSubordinate={onAddSubordinate}
-              onAddBranchContainer={onAddBranchContainer}
-              onAddBranchMember={onAddBranchMember}
-              deleteWithChildren={deleteWithChildren}
-              deleteOnlyNode={deleteOnlyNode}
-              addBranchContainerAndDeleteNode={addBranchContainerAndDeleteNode}
-            />
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // if (node.type === 'BranchContainer') {
+  //   return (
+  //     <ul className="children branch-members">
+  //       {node.children.map((child: Node) => (
+  //         <li key={child.id}>
+  //           <TreeNode
+  //             node={child}
+  //             onAddSubordinate={onAddSubordinate}
+  //             onAddBranchContainer={onAddBranchContainer}
+  //             onAddBranchMember={onAddBranchMember}
+  //             deleteWithChildren={deleteWithChildren}
+  //             deleteOnlyNode={deleteOnlyNode}
+  //             addBranchContainerAndDeleteNode={addBranchContainerAndDeleteNode}
+  //           />
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   return (
     <ul className="children other-children">

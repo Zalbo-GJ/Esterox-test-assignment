@@ -46,10 +46,9 @@ export const NodeButtonBottom: React.FC<NodeButtonsProps> = ({
 }) => {
   return (
     <div className="node-buttons-bottom">
-      {/* {node.type !== 'BranchContainer' && 
-      ( */}
-      <button onClick={() => onAddSubordinate(node)}>...</button>
-      {/* )} */}
+      {node.type !== 'BranchContainer' && (
+        <button onClick={() => onAddSubordinate(node)}>...</button>
+      )}
       {node.type === 'Director' && <button onClick={() => onAddBranchContainer(node)}>+</button>}
     </div>
   );
