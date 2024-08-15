@@ -106,6 +106,8 @@ export const useOrganizationTree = () => {
     }
   }, [root]);
 
+  
+
   const addSubordinate = useCallback((node: Node) => addNodeOrdered(node, 'Subordinate'), []);
   const addBranchContainer = useCallback((node: Node) => addNodeOrdered(node, 'BranchContainer'), []);
   const addBranchMember = useCallback((node: Node) => addNodeOrdered(node, 'BranchMember'), []);

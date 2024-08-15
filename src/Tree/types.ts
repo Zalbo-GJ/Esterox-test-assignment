@@ -1,8 +1,9 @@
-type NodeType = 'Director' | 'Subordinate' | 'BranchContainer' | 'BranchMember';
+export type NodeType = 'Director' | 'Subordinate' | 'BranchContainer' | 'BranchMember' | 'SubordinateContainer';
 
 export interface Node {
-  id: string;
-  name: string;
   type: NodeType;
+  name: string;
   children: Node[];
+  id: string;
+  parentId?: string;
 }

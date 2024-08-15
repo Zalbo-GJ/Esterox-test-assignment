@@ -149,3 +149,122 @@ h4 {
 .director::before {
   display: none;
 }
+
+
+/* children inside the branch container css */
+
+.tree-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node-content {
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  margin: 5px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.children {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.other-children {
+  justify-content: space-between;
+}
+
+.branch-members {
+  flex-direction: column;
+  align-items: center;
+}
+
+.other-children > li {
+  flex: 1;
+  padding: 20px 0 0 0;
+  position: relative;
+}
+
+.branch-members > li {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.other-children > li::before,
+.other-children > li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.other-children > li::before {
+  right: 50%;
+}
+
+.other-children > li::after {
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+
+.other-children > li:first-child::before,
+.other-children > li:last-child::after {
+  border: none;
+}
+
+.other-children > li:last-child::before {
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+}
+
+.other-children > li:first-child::after {
+  border-radius: 5px 0 0 0;
+}
+
+.branch-members > li::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 1px;
+  height: 20px;
+  background-color: #ccc;
+}
+
+.branchcontainer > .node-content {
+  background-color: #e6e6ff;
+}
+
+.director > .node-content {
+  background-color: #ffcccc;
+}
+
+.subordinate > .node-content {
+  background-color: #ccffcc;
+}
+
+.branchmember > .node-content {
+  background-color: #ccccff;
+}
+
+.tree-node::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 1px;
+  height: 20px;
+  background-color: #ccc;
+}
+
+.director::before {
+  display: none;
+}

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Node } from './types';
-import { NodeButtons } from './NodeButtons';
+import { NodeButtonTop, NodeButtonBottom } from './NodeButtons';
 import { ChildNodes } from './ChildNodes';
 
 interface TreeNodeProps {
@@ -25,8 +25,17 @@ export const TreeNode: React.FC<TreeNodeProps> = memo(
   }) => {
     return (
       <div className={`tree-node ${node.type.toLowerCase()}`}>
+        <NodeButtonTop
+          node={node}
+          onAddSubordinate={onAddSubordinate}
+          onAddBranchContainer={onAddBranchContainer}
+          onAddBranchMember={onAddBranchMember}
+          deleteWithChildren={deleteWithChildren}
+          deleteOnlyNode={deleteOnlyNode}
+          addBranchContainerAndDeleteNode={addBranchContainerAndDeleteNode}
+        />
         {node.name !== 'BranchContainer' && <div className="node-content">{node.name}</div>}
-        <NodeButtons
+        <NodeButtonBottom
           node={node}
           onAddSubordinate={onAddSubordinate}
           onAddBranchContainer={onAddBranchContainer}
